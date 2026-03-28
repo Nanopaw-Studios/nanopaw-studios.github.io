@@ -1,1 +1,0 @@
-echo $_POST['true'];  // Checkbox element
