@@ -645,6 +645,8 @@
     .footer-nav a { text-decoration:none; color:var(--muted); font-size:12px; letter-spacing:0.06em; text-transform:uppercase; transition:color 0.18s; }
     .footer-nav a:hover { color:var(--text); }
     .footer-copy { font-size:11px; color:var(--dim); text-align:right; line-height:1.7; }
+    .founder-link { color:var(--muted); text-decoration:none; border-bottom:1px solid var(--border-2); padding-bottom:1px; transition:color 0.18s,border-color 0.18s; }
+    .founder-link:hover { color:var(--text); border-color:var(--accent); }
 
     /* ── REVEAL ── */
     .reveal { opacity:0; transform:translateY(20px); transition:opacity 0.65s ease,transform 0.65s ease; }
@@ -773,7 +775,7 @@
       </a>
 
       <!-- Email -->
-      <a href="mailto:nanodog.inquires@gmail.com" class="platform-card email reveal">
+      <a href="/cdn-cgi/l/email-protection#18767976777c777f367176696d716a7d6b587f75797174367b7775" class="platform-card email reveal">
         <div class="platform-card-header">
           <div class="platform-icon" style="background:rgba(240,92,24,0.12);">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F05C18" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
@@ -785,7 +787,7 @@
           <div class="platform-desc">For press inquiries, business partnerships, and anything that needs a more formal response. We read everything and respond to genuine messages as quickly as we can.</div>
           <div class="platform-card-footer">
             <span class="platform-action">Get in Touch &rarr;</span>
-            <span class="platform-handle">nanodog.inquires@gmail.com</span>
+            <span class="platform-handle"><span class="__cf_email__" data-cfemail="18767976777c777f367176696d716a7d6b587f75797174367b7775">[email&#160;protected]</span></span>
           </div>
         </div>
       </a>
@@ -815,7 +817,7 @@
             <div class="contact-type-dot"></div>
             <div>
               <div class="contact-type-title">Press & Media Inquiries</div>
-              <div class="contact-type-desc">Send us an email at <strong style="color:var(--text);">nanodog.inquires@gmail.com</strong>. Include your outlet, what you're looking for, and any relevant links.</div>
+              <div class="contact-type-desc">Send us an email at <strong style="color:var(--text);"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6a040b04050e050d4403041b1f03180f192a0d070b030644090507">[email&#160;protected]</a></strong>. Include your outlet, what you're looking for, and any relevant links.</div>
             </div>
           </div>
           <div class="contact-type reveal">
@@ -847,7 +849,7 @@
           <div class="email-card-label">Direct Email</div>
           <div class="email-card-address">nanodog.inquires<br>@gmail.com</div>
           <div class="email-card-sub">For press, business, and formal inquiries. We aim to reply within a few working days.</div>
-          <a href="mailto:nanodog.inquires@gmail.com" class="btn-email">
+          <a href="/cdn-cgi/l/email-protection#305e515e5f545f571e595e41455942554370575d51595c1e535f5d" class="btn-email">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             Send Email
           </a>
@@ -958,11 +960,12 @@
     </ul>
     <div class="footer-copy">
       &copy; 2025 Nanopaw Studios. All rights reserved.<br>
-      Based in the United Kingdom.
+      Based in the United Kingdom.<br>
+      <span style="margin-top:4px;display:inline-block;font-size:10px;">Founded by <a href="https://laymglitched.github.io" target="_blank" rel="noopener noreferrer" class="founder-link">laymglitched</a></span>
     </div>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // CURSOR
     const cursor=document.getElementById('cursor'),cursorRing=document.getElementById('cursor-ring'),cursorGlow=document.getElementById('cursor-glow');
     let mx=-400,my=-400,rx=-400,ry=-400,gx=-400,gy=-400;
@@ -995,20 +998,4 @@
         // open clicked if it wasn't open
         if(!isOpen){
           btn.classList.add('open');
-          btn.setAttribute('aria-expanded','true');
-          btn.nextElementSibling.classList.add('open');
-        }
-      });
-    });
-
-    // SCROLL REVEAL
-    const io=new IntersectionObserver(entries=>{
-      entries.forEach((e,i)=>{
-        if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in-view'),i*80);io.unobserve(e.target);}
-      });
-    },{threshold:0.08});
-    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-  </script>
-
-</body>
-</html>
+          btn.setAttribute('aria-expanded','tr
