@@ -1,0 +1,134 @@
+# Privacy Policy
+
+**Effective Date:** June 28, 2026
+
+CUBE is developed by **Nanopaw** ("we," "us," or "our"). This Privacy Policy describes what information we collect when you play CUBE, how we use it, and your rights in relation to it.
+
+By playing CUBE, you agree to the practices described in this policy.
+
+---
+
+## What We Collect
+
+We collect only what's necessary to run the game. This includes:
+
+- Your chosen display name
+- A device-based identifier used to create and recognise your account
+- Cube Coins balance
+- Customisation preferences (player colour, cosmetics, characters)
+- Owned inventory items
+- Gameplay progression data (mastery levels, experience, etc.)
+- Other save data required to deliver game features
+
+We don't collect sensitive personal information and have no interest in data beyond what's needed to make CUBE work.
+
+---
+
+## Third-Party Services
+
+CUBE relies on trusted third-party services to deliver its online features.
+
+### Microsoft PlayFab
+
+PlayFab handles account management and cloud saves, including:
+
+- Account creation and identification
+- Cloud-saved game progress
+- Player inventory and currency management
+- Character ownership
+- Future progression systems
+
+[PlayFab Privacy Policy](https://playfab.com/privacy/) · [Microsoft Privacy Statement](https://privacy.microsoft.com/privacy)
+
+### Photon Engine & Photon Voice
+
+Photon powers real-time multiplayer and voice chat, including:
+
+- Multiplayer networking and matchmaking
+- Real-time gameplay synchronisation
+- In-game voice communication
+
+To establish and maintain connections, Photon may process network data such as IP addresses. Nanopaw does not store or process players' IP addresses.
+
+[Photon Privacy Policy](https://www.photonengine.com/privacy-policy)
+
+---
+
+## Voice Chat
+
+Voice chat is transmitted in real time through Photon Voice to other players in your session only. We do not record, monitor, or store voice communications.
+
+---
+
+## Analytics & Advertising
+
+CUBE does not use analytics services to track player behaviour and does not display third-party advertisements. We do not collect data for advertising, profiling, or marketing purposes.
+
+---
+
+## How We Use Your Information
+
+We use the information we collect to:
+
+- Create and identify your game account
+- Save and restore your game progress
+- Synchronise multiplayer gameplay
+- Provide matchmaking
+- Deliver purchased or unlocked content
+- Maintain stability and online functionality
+
+---
+
+## Sharing Your Information
+
+We do not sell your personal information. We share data only with the third-party providers required to run CUBE — Microsoft PlayFab and Photon Engine/Voice — who process it solely to deliver their respective services.
+
+---
+
+## Data Security
+
+We take reasonable steps to protect your information and work with trusted industry providers to help keep it secure. That said, no online service can guarantee absolute security.
+
+---
+
+## Data Retention
+
+We keep your account data for as long as it's reasonably necessary to provide CUBE's online services. If those services are discontinued, we will notify players and delete account data after an appropriate notice period where practical.
+
+---
+
+## Your Rights
+
+Depending on where you live, you may have the right to:
+
+- Access the personal data we hold about you
+- Correct inaccurate information
+- Request deletion of your account data
+- Object to certain types of data processing
+
+To exercise any of these rights, contact us at the address below.
+
+---
+
+## Children's Privacy
+
+CUBE is not directed at children under the age required by applicable law in their country. If we become aware that a child has provided personal information in violation of applicable law, we will take reasonable steps to remove it.
+
+---
+
+## Changes to This Policy
+
+We may update this Privacy Policy from time to time. When we do, we'll revise the date at the top of this page. For significant changes, we'll notify players in-game or through official channels where appropriate.
+
+---
+
+## Contact
+
+Questions about this policy or your personal data? Reach us at:
+
+**Nanopaw**  
+[nanodogs.inquires@gmail.com](mailto:nanodogs.inquires@gmail.com)
+
+---
+
+*Thank you for playing CUBE.*
