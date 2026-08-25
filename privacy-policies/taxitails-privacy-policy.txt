@@ -64,9 +64,6 @@ we may access:
   information, used to identify you to friends in multiplayer sessions
 * **User Age Group** — used to provide an age-appropriate experience
   and comply with platform requirements
-* **Invites** — used to let you invite friends to join your game session
-* **Parties** — used to support joining or playing with your existing
-  Meta Horizon Party
 
 This information is provided to us by the Meta Horizon Platform in
 accordance with your Meta account settings and Meta's own Developer
