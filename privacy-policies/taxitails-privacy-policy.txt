@@ -52,6 +52,30 @@ Critter Cab Company does not store or intentionally process players' IP addresse
 
 [Photon Privacy Policy](https://www.photonengine.com/privacy-policy)
 
+### Meta Horizon Platform
+
+Critter Cab Company uses the Meta Horizon Platform SDK to provide certain
+social and multiplayer features on Meta Quest devices. Through this SDK,
+we may access:
+
+* **User ID** — a platform identifier used to recognise your account
+  within Critter Cab Company
+* **User Profile** — your Meta Horizon display name and profile
+  information, used to identify you to friends in multiplayer sessions
+* **User Age Group** — used to provide an age-appropriate experience
+  and comply with platform requirements
+* **Invites** — used to let you invite friends to join your game session
+* **Parties** — used to support joining or playing with your existing
+  Meta Horizon Party
+
+This information is provided to us by the Meta Horizon Platform in
+accordance with your Meta account settings and Meta's own Developer
+Data Use Policy. We use it solely to provide Critter Cab Company's
+social and multiplayer features and do not use it for advertising or
+sell it to third parties.
+
+[Meta Horizon Developer Data Use Policy](https://developer.oculus.com/policy/data-use/)
+
 ---
 
 ## Friend-Only Multiplayer
