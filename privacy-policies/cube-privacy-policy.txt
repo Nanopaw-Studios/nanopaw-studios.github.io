@@ -2,9 +2,9 @@
 
 **Effective Date:** June 28, 2026
 
-CUBE is developed by **Nanopaw** ("we," "us," or "our"). This Privacy Policy describes what information we collect when you play CUBE, how we use it, and your rights in relation to it.
+Project: Cube is developed by **Nanopaw** ("we," "us," or "our"). This Privacy Policy describes what information we collect when you play Project: Cube, how we use it, and your rights in relation to it.
 
-By playing CUBE, you agree to the practices described in this policy.
+By playing Project: Cube, you agree to the practices described in this policy.
 
 ---
 
@@ -20,13 +20,13 @@ We collect only what's necessary to run the game. This includes:
 - Gameplay progression data (mastery levels, experience, etc.)
 - Other save data required to deliver game features
 
-We don't collect sensitive personal information and have no interest in data beyond what's needed to make CUBE work.
+We don't collect sensitive personal information and have no interest in data beyond what's needed to make Project: Cube work.
 
 ---
 
 ## Third-Party Services
 
-CUBE relies on trusted third-party services to deliver its online features.
+Project: Cube relies on trusted third-party services to deliver its online features.
 
 ### Microsoft PlayFab
 
@@ -62,7 +62,7 @@ Voice chat is transmitted in real time through Photon Voice to other players in 
 
 ## Analytics & Advertising
 
-CUBE does not use analytics services to track player behaviour and does not display third-party advertisements. We do not collect data for advertising, profiling, or marketing purposes.
+Project: Cube does not use analytics services to track player behaviour and does not display third-party advertisements. We do not collect data for advertising, profiling, or marketing purposes.
 
 ---
 
@@ -81,7 +81,7 @@ We use the information we collect to:
 
 ## Sharing Your Information
 
-We do not sell your personal information. We share data only with the third-party providers required to run CUBE — Microsoft PlayFab and Photon Engine/Voice — who process it solely to deliver their respective services.
+We do not sell your personal information. We share data only with the third-party providers required to run Project: Cube — Microsoft PlayFab and Photon Engine/Voice — who process it solely to deliver their respective services.
 
 ---
 
@@ -93,7 +93,7 @@ We take reasonable steps to protect your information and work with trusted indus
 
 ## Data Retention
 
-We keep your account data for as long as it's reasonably necessary to provide CUBE's online services. If those services are discontinued, we will notify players and delete account data after an appropriate notice period where practical.
+We keep your account data for as long as it's reasonably necessary to provide Project: Cube's online services. If those services are discontinued, we will notify players and delete account data after an appropriate notice period where practical.
 
 ---
 
@@ -112,7 +112,7 @@ To exercise any of these rights, contact us at the address below.
 
 ## Children's Privacy
 
-CUBE is not directed at children under the age required by applicable law in their country. If we become aware that a child has provided personal information in violation of applicable law, we will take reasonable steps to remove it.
+Project: Cube is not directed at children under the age required by applicable law in their country. If we become aware that a child has provided personal information in violation of applicable law, we will take reasonable steps to remove it.
 
 ---
 
@@ -131,4 +131,4 @@ Questions about this policy or your personal data? Reach us at:
 
 ---
 
-*Thank you for playing CUBE.*
+*Thank you for playing Project: Cube.*
