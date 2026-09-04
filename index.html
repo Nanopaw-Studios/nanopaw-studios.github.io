@@ -401,6 +401,12 @@
       white-space: nowrap;
     }
 
+    .ticker-group {
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
     .ticker-track:hover { animation-play-state: paused; }
 
     .ticker-item {
@@ -798,6 +804,253 @@
     .founder-link { color:var(--muted); text-decoration:none; border-bottom:1px solid var(--border-2); padding-bottom:1px; transition:color 0.18s,border-color 0.18s; }
     .founder-link:hover { color:var(--text); border-color:var(--accent); }
 
+    /* ── PLAY BADGE ON CARDS ── */
+    .play-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(10, 14, 26, 0.88);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #fff;
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      backdrop-filter: blur(8px);
+      transition: background 0.2s, transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+      z-index: 3;
+      cursor: pointer;
+    }
+    button.play-badge {
+      font-family: inherit;
+    }
+    .game-card:hover .play-badge:hover,
+    button.play-badge:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px var(--accent-glow);
+    }
+
+    /* ── DEVLOGS SECTION ── */
+    .devlogs-section {
+      background: var(--bg);
+      position: relative;
+      z-index: 1;
+    }
+    .devlogs-top {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 44px;
+      gap: 20px;
+    }
+    .devlogs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .devlog-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.25s, transform 0.22s, box-shadow 0.22s;
+      cursor: pointer;
+      position: relative;
+    }
+    .devlog-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-6px);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+    }
+    .devlog-thumb-wrap {
+      position: relative;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      background: var(--surface-2);
+    }
+    .devlog-thumb-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .devlog-card:hover .devlog-thumb-wrap img {
+      transform: scale(1.06);
+    }
+    .devlog-play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(10, 14, 26, 0.88);
+      border: 2px solid var(--accent);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    }
+    .devlog-card:hover .devlog-play-btn {
+      background: var(--accent);
+      transform: translate(-50%, -50%) scale(1.12);
+      box-shadow: 0 0 24px var(--accent-glow);
+    }
+    .devlog-body {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .devlog-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+    .devlog-badge {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: rgba(240,92,24,0.14);
+      color: var(--accent);
+      border: 1px solid rgba(240,92,24,0.25);
+    }
+    .devlog-title {
+      font-family: 'Anton', sans-serif;
+      font-size: 20px;
+      letter-spacing: 0.02em;
+      color: var(--text);
+      line-height: 1.15;
+      margin-bottom: 10px;
+      transition: color 0.2s;
+    }
+    .devlog-card:hover .devlog-title {
+      color: #fff;
+    }
+    .devlog-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+      flex: 1;
+      margin-bottom: 18px;
+    }
+    .devlog-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+    }
+    .devlog-action svg {
+      transition: transform 0.2s;
+    }
+    .devlog-card:hover .devlog-action svg {
+      transform: translateX(4px);
+    }
+
+    /* ── VIDEO MODAL ── */
+    .video-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(4, 6, 12, 0.88);
+      backdrop-filter: blur(10px);
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .video-modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .video-modal-dialog {
+      width: 100%;
+      max-width: 900px;
+      background: var(--surface);
+      border: 1px solid var(--border-2);
+      border-radius: var(--r-lg);
+      box-shadow: 0 32px 80px rgba(0,0,0,0.6);
+      overflow: hidden;
+      transform: scale(0.95);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .video-modal-overlay.active .video-modal-dialog {
+      transform: scale(1);
+    }
+    .video-modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface-2);
+    }
+    .video-modal-title {
+      font-family: 'Anton', sans-serif;
+      font-size: 18px;
+      color: var(--text);
+      letter-spacing: 0.02em;
+    }
+    .video-modal-close {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      line-height: 1;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+    }
+    .video-modal-close:hover {
+      color: #fff;
+      border-color: var(--accent);
+      background: rgba(240,92,24,0.15);
+    }
+    .video-modal-player {
+      position: relative;
+      padding-top: 56.25%; /* 16:9 */
+      background: #000;
+    }
+    .video-modal-player iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
     /* ── REVEAL ── */
     .reveal { opacity:0; transform:translateY(22px); transition:opacity 0.65s ease, transform 0.65s ease; }
     .reveal.in-view { opacity:1; transform:translateY(0); }
@@ -807,12 +1060,15 @@
       .about-layout { grid-template-columns:1fr; gap:48px; }
       .about-layout .about-visual { max-width:400px; }
       .games-grid { grid-template-columns:1fr 1fr; }
+      .devlogs-grid { grid-template-columns:1fr 1fr; }
       .community-grid { grid-template-columns:1fr 1fr; }
       .hero-watermark { display:none; }
     }
     @media (max-width: 700px) {
       .nav-links li:not(:last-child) { display:none; }
       .games-grid { grid-template-columns:1fr; }
+      .devlogs-grid { grid-template-columns:1fr; }
+      .devlogs-top { flex-direction:column; align-items:flex-start; }
       .community-grid { grid-template-columns:1fr; }
       .games-top { flex-direction:column; align-items:flex-start; }
       footer { grid-template-columns:1fr; gap:20px; }
@@ -861,7 +1117,7 @@
     ],
     "sameAs": [
       "https://www.youtube.com/@NanopawStudios",
-      "https://www.youtube.com/@NanoDogsStudios",
+      "https://www.youtube.com/@laym.glitched",
       "https://discord.gg/tTZYAQTvRF",
       "https://www.patreon.com/cw/NanodogsNDS",
       "https://twitter.com/nanodogsstudios",
@@ -885,6 +1141,7 @@
     <ul class="nav-links">
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="projects.html">Games</a></li>
+      <li><a href="#devlogs">Devlogs</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="community.html" class="btn-nav">Community</a></li>
     </ul>
@@ -919,46 +1176,48 @@
   </section>
 
   <!-- TICKER -->
-  <div class="ticker-wrap" aria-hidden="true">
+  <div class="ticker-wrap" role="region" aria-label="Studio Highlights">
     <div class="ticker-track">
-      <span class="ticker-item">Nanopaw Studios <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Making Games for Everyone <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Est. 2023 <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Based in the UK <span class="ticker-dot"></span></span>
-      <span class="ticker-item">LocoMotion <span class="ticker-dot"></span></span>
-      <span class="ticker-item">The Expedition <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Project: Cube <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Formerly Nanodogs Studios <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Indie Game Dev <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Nanopaw Studios <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Making Games for Everyone <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Est. 2023 <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Based in the UK <span class="ticker-dot"></span></span>
-      <span class="ticker-item">LocoMotion <span class="ticker-dot"></span></span>
-      <span class="ticker-item">The Expedition <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Project: Cube <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Formerly Nanodogs Studios <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Indie Game Dev <span class="ticker-dot"></span></span>
+      <div class="ticker-group">
+        <span class="ticker-item">Nanopaw Studios <span class="ticker-dot"></span></span>
+        <span class="ticker-item">Making Games for Everyone <span class="ticker-dot"></span></span>
+        <span class="ticker-item">Est. 2023 <span class="ticker-dot"></span></span>
+        <span class="ticker-item">Based in the UK <span class="ticker-dot"></span></span>
+        <span class="ticker-item">LocoMotion <span class="ticker-dot"></span></span>
+        <span class="ticker-item">The Expedition <span class="ticker-dot"></span></span>
+        <span class="ticker-item">Project: Cube <span class="ticker-dot"></span></span>
+        <span class="ticker-item">Solo Indie Dev <span class="ticker-dot"></span></span>
+      </div>
+      <div class="ticker-group" aria-hidden="true">
+        <span class="ticker-item">Nanopaw Studios <span class="ticker-dot"></span></span>
+        <span class="ticker-item">Making Games for Everyone <span class="ticker-dot"></span></span>
+        <span class="ticker-item">Est. 2023 <span class="ticker-dot"></span></span>
+        <span class="ticker-item">Based in the UK <span class="ticker-dot"></span></span>
+        <span class="ticker-item">LocoMotion <span class="ticker-dot"></span></span>
+        <span class="ticker-item">The Expedition <span class="ticker-dot"></span></span>
+        <span class="ticker-item">Project: Cube <span class="ticker-dot"></span></span>
+        <span class="ticker-item">Solo Indie Dev <span class="ticker-dot"></span></span>
+      </div>
     </div>
   </div>
 
   <!-- ABOUT -->
   <section id="about" aria-labelledby="about-heading">
     <div class="section-tag">Who We Are</div>
-    <h2 class="section-heading" id="about-heading">An indie studio<br>with big ideas.</h2>
+    <h2 class="section-heading" id="about-heading">Solo indie dev<br>with big ideas.</h2>
     <div class="about-layout">
       <div class="about-body">
-        <p class="reveal">Nanopaw Studios (formerly Nanodogs Studios) is an independent game development company based in the United Kingdom. Founded in 2023, we're a team of passionate developers driven by a single belief: great games should be for everyone.</p>
-        <p class="reveal">We build across genres — from high-velocity action platformers to atmospheric horror and experimental multiplayer survival — always united by a commitment to craft, creativity, and player experience.</p>
+        <p class="reveal">Nanopaw Studios (formerly Nanodogs Studios) is a solo independent game development studio based in the United Kingdom, founded in 2023 by laymglitched. Driven by a single belief: great games should be for everyone.</p>
+        <p class="reveal">Built by one developer with hands-on focus across design, programming, and audio, Nanopaw crafts experiences that anyone can pick up and love — from fast-paced momentum platforming to atmospheric horror and experimental multiplayer survival.</p>
         <div class="about-quote reveal">
           <blockquote>"Making games for everyone."</blockquote>
           <cite>— Our Motto</cite>
         </div>
         <div class="about-stats">
-          <div class="stat reveal"><div class="stat-val">2023</div><div class="stat-lbl">Year Founded</div></div>
-          <div class="stat reveal"><div class="stat-val">3+</div><div class="stat-lbl">Games in Development</div></div>
+          <div class="stat reveal"><div class="stat-val">2</div><div class="stat-lbl">Released Games</div></div>
+          <div class="stat reveal"><div class="stat-val">1</div><div class="stat-lbl">In Active Dev</div></div>
           <div class="stat reveal"><div class="stat-val">UK</div><div class="stat-lbl">Based in Britain</div></div>
-          <div class="stat reveal"><div class="stat-val">Indie</div><div class="stat-lbl">Fully Independent</div></div>
+          <div class="stat reveal"><div class="stat-val">Solo</div><div class="stat-lbl">Independent Dev</div></div>
         </div>
       </div>
       <div class="about-visual reveal">
@@ -984,8 +1243,12 @@
     </div>
     <div class="games-grid">
       <a href="projects.html#locomotion" class="game-card reveal">
-        <div class="game-thumb">
+        <div class="game-thumb" style="position:relative;">
           <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2123510/ss_65a08e61dccfac011c1e4b7e0719eb8c77135352.jpg?t=1710676156" alt="LocoMotion" loading="lazy">
+          <span class="play-badge" style="cursor:default;">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Momentum Action
+          </span>
         </div>
         <div class="game-info">
           <span class="genre-tag">Action Platformer</span>
@@ -998,8 +1261,12 @@
         </div>
       </a>
       <a href="projects.html#expedition" class="game-card reveal">
-        <div class="game-thumb">
+        <div class="game-thumb" style="position:relative;">
           <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3621410/992815dd1579baaf2f1ca381663933bb2502aa22/ss_992815dd1579baaf2f1ca381663933bb2502aa22.jpg" alt="The Expedition" loading="lazy">
+          <button type="button" class="play-badge" onclick="openTrailerModal('7SgQaV62zRQ', 'The Expedition — Official Gameplay Trailer'); event.preventDefault(); event.stopPropagation();">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Watch Trailer
+          </button>
         </div>
         <div class="game-info">
           <span class="genre-tag">Action Horror</span>
@@ -1012,8 +1279,12 @@
         </div>
       </a>
       <a href="projects.html#cube" class="game-card reveal">
-        <div class="game-thumb">
-          <img src="https://nanopaw-studios.github.io/images/cube/ic.png" alt="Project: Cube" loading="lazy" style="object-fit:contain; padding:20px; background:var(--surface-2);">
+        <div class="game-thumb" style="position:relative; background:var(--surface-2);">
+          <img src="https://nanopaw-studios.github.io/images/cube/ic.png" alt="Project: Cube" loading="lazy" style="object-fit:contain; padding:20px;">
+          <button type="button" class="play-badge" onclick="openTrailerModal('EodaRHRCkgQ', 'Project: Cube — Early Gameplay Testing'); event.preventDefault(); event.stopPropagation();">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Watch Gameplay
+          </button>
         </div>
         <div class="game-info">
           <span class="genre-tag">Asymmetric Survival</span>
@@ -1030,11 +1301,95 @@
 
   <div class="divider"></div>
 
+  <!-- DEVLOGS & UPDATES -->
+  <section id="devlogs" class="devlogs-section" aria-labelledby="devlogs-heading">
+    <div class="devlogs-top">
+      <div>
+        <div class="section-tag">Devlogs & Updates</div>
+        <h2 class="section-heading" id="devlogs-heading">Inside the Studio</h2>
+        <p class="devlogs-sub" style="margin-top:12px; font-size:14px; color:var(--muted); max-width:540px; line-height:1.6;">Follow the development journey directly — watch gameplay trailers, system deep-dives, and behind-the-scenes progress right here on the site.</p>
+      </div>
+      <a href="https://www.youtube.com/@NanopawStudios" target="_blank" rel="noopener noreferrer" class="btn-ghost">YouTube Channel &rarr;</a>
+    </div>
+
+    <div class="devlogs-grid">
+
+      <!-- Devlog 1: The Expedition Gameplay Trailer -->
+      <article class="devlog-card reveal" onclick="openTrailerModal('7SgQaV62zRQ', 'The Expedition — Official Gameplay Trailer')">
+        <div class="devlog-thumb-wrap">
+          <img src="https://img.youtube.com/vi/7SgQaV62zRQ/hqdefault.jpg" alt="The Expedition Gameplay Trailer" loading="lazy">
+          <div class="devlog-play-btn" aria-label="Play video">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
+        </div>
+        <div class="devlog-body">
+          <div class="devlog-meta">
+            <span class="devlog-badge">Official Trailer</span>
+            <span>March 2025</span>
+          </div>
+          <h3 class="devlog-title">The Expedition — Official Gameplay Trailer</h3>
+          <p class="devlog-desc">Watch the official gameplay trailer showcasing the tense atmosphere, sound design, and relentless survival mechanics of The Expedition.</p>
+          <div class="devlog-action">
+            Watch Trailer On-Site
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+      </article>
+
+      <!-- Devlog 2: Project Cube Testing -->
+      <article class="devlog-card reveal" onclick="openTrailerModal('EodaRHRCkgQ', 'Project: Cube — Early Gameplay Testing')">
+        <div class="devlog-thumb-wrap">
+          <img src="https://img.youtube.com/vi/EodaRHRCkgQ/hqdefault.jpg" alt="Project: Cube Early Gameplay Testing" loading="lazy">
+          <div class="devlog-play-btn" aria-label="Play video">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
+        </div>
+        <div class="devlog-body">
+          <div class="devlog-meta">
+            <span class="devlog-badge">Gameplay Test</span>
+            <span>January 2026</span>
+          </div>
+          <h3 class="devlog-title">Project: Cube — Early Testing & Hunting Loops</h3>
+          <p class="devlog-desc">First in-engine test footage of Project: Cube! A raw look at testing asymmetric hunter abilities and high-stakes multiplayer survivor evasion.</p>
+          <div class="devlog-action">
+            Watch Gameplay On-Site
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+      </article>
+
+      <!-- Devlog 3: Rebuilding Architecture -->
+      <article class="devlog-card reveal" onclick="openTrailerModal('iQtNQgr1O8g', 'Project: Cube — Architecture Devlog 1')">
+        <div class="devlog-thumb-wrap">
+          <img src="https://img.youtube.com/vi/iQtNQgr1O8g/hqdefault.jpg" alt="Project: Cube Architecture Devlog" loading="lazy">
+          <div class="devlog-play-btn" aria-label="Play video">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
+        </div>
+        <div class="devlog-body">
+          <div class="devlog-meta">
+            <span class="devlog-badge">Devlog #1</span>
+            <span>November 2025</span>
+          </div>
+          <h3 class="devlog-title">CUBE Devlog 1: Remaking the Core Architecture</h3>
+          <p class="devlog-desc">Solo developer Laym breaks down tearing down the original codebase to rebuild character movement, multiplayer networking sync, and lighting.</p>
+          <div class="devlog-action">
+            Watch Devlog On-Site
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
   <!-- COMMUNITY -->
   <section id="community" aria-labelledby="community-heading">
     <div class="section-tag">Get Involved</div>
     <h2 class="section-heading" id="community-heading">Join the Community</h2>
-    <p class="community-intro">Connect with the team and fellow players. Follow our progress, support the studio, or just say hi.</p>
+    <p class="community-intro">Connect directly with solo developer Laym and fellow players. Follow our progress, support the studio, or just say hi.</p>
     <div class="community-grid">
 
       <a href="https://discord.gg/tTZYAQTvRF" target="_blank" rel="noopener noreferrer" class="comm-card reveal">
@@ -1042,16 +1397,16 @@
           <svg width="22" height="22" viewBox="0 0 24 24" fill="#5865F2"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.043.03.053A19.9 19.9 0 0 0 5.1 20.3a.077.077 0 0 0 .084-.026c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 5.075-2.18.077.077 0 0 0 .03-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
         </div>
         <div class="comm-title">Discord</div>
-        <div class="comm-desc">Chat with the team and community. Get news, give feedback, hang out.</div>
+        <div class="comm-desc">Chat with Laym and the community. Get news, give feedback, hang out.</div>
         <div class="comm-action">Join Server &rarr;</div>
       </a>
 
-      <a href="https://www.youtube.com/@NanoDogsStudios" target="_blank" rel="noopener noreferrer" class="comm-card reveal">
+      <a href="https://www.youtube.com/@NanopawStudios" target="_blank" rel="noopener noreferrer" class="comm-card reveal">
         <div class="comm-icon" style="background:rgba(255,0,0,0.12);">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="#FF0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
         </div>
         <div class="comm-title">YouTube</div>
-        <div class="comm-desc">Devlogs, trailers, and behind-the-scenes content from the studio.</div>
+        <div class="comm-desc">Trailers and studio updates on @NanopawStudios & developer devlogs on @laym.glitched.</div>
         <div class="comm-action">Watch Now &rarr;</div>
       </a>
 
@@ -1064,7 +1419,7 @@
         <div class="comm-action">Support Us &rarr;</div>
       </a>
 
-      <a href="/cdn-cgi/l/email-protection#711f101f1e151e165f181f00041803140231161c10181d5f121e1c" class="comm-card reveal">
+      <a href="mailto:nanodog.inquires@gmail.com" class="comm-card reveal">
         <div class="comm-icon" style="background:rgba(240,92,24,0.12);">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F05C18" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
@@ -1078,6 +1433,19 @@
     </div>
   </section>
 
+  <!-- VIDEO MODAL -->
+  <div id="video-modal" class="video-modal-overlay" role="dialog" aria-modal="true" aria-hidden="true" onclick="closeTrailerModal(event)">
+    <div class="video-modal-dialog" onclick="event.stopPropagation()">
+      <div class="video-modal-header">
+        <div id="video-modal-title" class="video-modal-title">Watch Video</div>
+        <button type="button" class="video-modal-close" onclick="closeTrailerModal()" aria-label="Close video">&times;</button>
+      </div>
+      <div class="video-modal-player">
+        <iframe id="video-modal-iframe" src="" title="Video Player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
   <!-- FOOTER -->
   <footer>
     <div>
@@ -1087,6 +1455,7 @@
     <ul class="footer-nav">
       <li><a href="index.html">Home</a></li>
       <li><a href="projects.html">Games</a></li>
+      <li><a href="#devlogs">Devlogs</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="community.html">Community</a></li>
     </ul>
@@ -1098,6 +1467,35 @@
   </footer>
 
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // ── VIDEO MODAL ──
+    const videoModal = document.getElementById('video-modal');
+    const videoIframe = document.getElementById('video-modal-iframe');
+    const videoTitle = document.getElementById('video-modal-title');
+
+    function openTrailerModal(videoId, title) {
+      if (!videoModal || !videoIframe) return;
+      videoTitle.textContent = title || 'Gameplay Video';
+      videoIframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`;
+      videoModal.classList.add('active');
+      videoModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeTrailerModal(e) {
+      if (!videoModal || !videoIframe) return;
+      if (e && e.target !== videoModal && !e.target.classList.contains('video-modal-close')) return;
+      videoModal.classList.remove('active');
+      videoModal.setAttribute('aria-hidden', 'true');
+      videoIframe.src = '';
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && videoModal && videoModal.classList.contains('active')) {
+        closeTrailerModal();
+      }
+    });
+
     // ── CURSOR ──
     const cursor    = document.getElementById('cursor');
     const cursorRing = document.getElementById('cursor-ring');

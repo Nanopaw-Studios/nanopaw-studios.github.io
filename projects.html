@@ -467,9 +467,172 @@
     .footer-nav a { text-decoration:none; color:var(--muted); font-size:12px; letter-spacing:0.06em; text-transform:uppercase; transition:color 0.18s; }
     .footer-nav a:hover { color:var(--text); }
 
-    .footer-copy { font-size:11px; color:var(--dim); text-align:right; line-height:1.7; }
-    .founder-link { color:var(--muted); text-decoration:none; border-bottom:1px solid var(--border-2); padding-bottom:1px; transition:color 0.18s,border-color 0.18s; }
-    .founder-link:hover { color:var(--text); border-color:var(--accent); }
+    /* ── GAMEPLAY MEDIA & TRAILER STYLES ── */
+    .btn-trailer {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 14px 26px;
+      border-radius: var(--r);
+      border: 1px solid var(--accent);
+      cursor: pointer;
+      box-shadow: 0 4px 18px var(--accent-glow);
+      transition: transform 0.18s, box-shadow 0.18s, background 0.18s;
+      font-family: inherit;
+    }
+    .btn-trailer:hover {
+      background: var(--accent-bright);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 26px var(--accent-glow);
+    }
+
+    .banner-play-btn {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 76px; height: 76px;
+      border-radius: 50%;
+      background: rgba(10, 14, 26, 0.88);
+      border: 2px solid var(--accent);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 4;
+      transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
+      box-shadow: 0 12px 36px rgba(0,0,0,0.5);
+    }
+    .banner-play-btn:hover {
+      background: var(--accent);
+      transform: translate(-50%, -50%) scale(1.1);
+      box-shadow: 0 0 32px var(--accent-glow);
+    }
+    .banner-play-label {
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #fff;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.9);
+      pointer-events: none;
+    }
+    .banner-video-container {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      background: #000;
+      z-index: 5;
+      display: none;
+    }
+    .banner-video-container.active {
+      display: block;
+    }
+    .banner-video-container iframe {
+      width: 100%; height: 100%;
+      border: 0;
+    }
+    .banner-close-video {
+      position: absolute;
+      top: 14px; right: 14px;
+      background: rgba(10, 14, 26, 0.85);
+      border: 1px solid var(--border-2);
+      color: #fff;
+      width: 34px; height: 34px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      line-height: 1;
+      z-index: 10;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .banner-close-video:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    /* ── GAMEPLAY SCREENSHOT STRIP ── */
+    .gameplay-strip {
+      margin-bottom: 28px;
+    }
+    .gameplay-strip-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .gameplay-strip-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+    .gameplay-thumbs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .gameplay-thumb {
+      aspect-ratio: 16/9;
+      border-radius: var(--r);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      position: relative;
+      background: var(--surface-2);
+      padding: 0;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .gameplay-thumb img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s;
+    }
+    .gameplay-thumb:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .gameplay-thumb:hover img {
+      transform: scale(1.08);
+    }
+    .gameplay-thumb.active {
+      border-color: var(--accent);
+      box-shadow: 0 0 14px var(--accent-glow);
+    }
+    .thumb-label {
+      position: absolute;
+      bottom: 4px; left: 6px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #fff;
+      background: rgba(4,6,12,0.8);
+      padding: 2px 6px;
+      border-radius: 3px;
+      backdrop-filter: blur(4px);
+    }
 
     /* ── REVEAL ── */
     .reveal { opacity:0; transform:translateY(22px); transition:opacity 0.65s ease, transform 0.65s ease; }
@@ -518,7 +681,7 @@
         },
         "sameAs": [
           "https://www.youtube.com/@NanopawStudios",
-          "https://www.youtube.com/@NanoDogsStudios",
+          "https://www.youtube.com/@laym.glitched",
           "https://discord.gg/tTZYAQTvRF",
           "https://www.patreon.com/cw/NanodogsNDS",
           "https://twitter.com/nanodogsstudios",
@@ -664,6 +827,7 @@
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="projects.html" class="active">Games</a></li>
+      <li><a href="index.html#devlogs">Devlogs</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="community.html" class="btn-nav">Community</a></li>
     </ul>
@@ -674,8 +838,8 @@
     <div class="hero-glow" aria-hidden="true"></div>
     <div class="page-hero-tag">Nanopaw Studios</div>
     <h1 class="page-hero-title">OUR<br>PROJECTS</h1>
-    <p class="page-hero-sub">Every game we make is built with care, creativity, and the drive to give players something worth playing.</p>
-    <div class="page-hero-count">3 Games &mdash; Action · Horror · Survival</div>
+    <p class="page-hero-sub">Built with care, precision, and passion by solo developer Laym under the Nanopaw label.</p>
+    <div class="page-hero-count">3 Games &mdash; 2 Released · 1 In Development</div>
   </div>
 
   <div class="divider"></div>
@@ -686,8 +850,8 @@
     <!-- LocoMotion -->
     <div class="game-entry reveal" id="locomotion">
       <div class="game-entry-inner">
-        <div class="game-banner">
-          <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2123510/ss_65a08e61dccfac011c1e4b7e0719eb8c77135352.jpg?t=1710676156" alt="LocoMotion">
+        <div class="game-banner" id="locomotion-banner">
+          <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2123510/ss_65a08e61dccfac011c1e4b7e0719eb8c77135352.jpg?t=1710676156" alt="LocoMotion Gameplay" class="banner-main-img">
           <div class="game-banner-overlay"></div>
           <div class="game-banner-content">
             <div class="game-banner-genre">Action Platformer</div>
@@ -697,6 +861,30 @@
         <div class="game-body">
           <div class="game-main">
             <p class="game-description">LocoMotion is a fast-paced action platformer where momentum is the core mechanic. Master fluid movement to navigate challenging environments, chain together acrobatic sequences, and push your skills to the limit. Whether you're speedrunning or exploring every corner, LocoMotion rewards mastery and experimentation in equal measure.</p>
+            
+            <!-- Screenshot Gallery Strip -->
+            <div class="gameplay-strip">
+              <div class="gameplay-strip-label">Gameplay Screenshots & Trial Courses</div>
+              <div class="gameplay-thumbs">
+                <button type="button" class="gameplay-thumb active" onclick="swapBannerImage('locomotion-banner', 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2123510/ss_65a08e61dccfac011c1e4b7e0719eb8c77135352.jpg?t=1710676156', this)">
+                  <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2123510/ss_65a08e61dccfac011c1e4b7e0719eb8c77135352.jpg?t=1710676156" alt="Speedrun Flow">
+                  <span class="thumb-label">Momentum</span>
+                </button>
+                <button type="button" class="gameplay-thumb" onclick="swapBannerImage('locomotion-banner', 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2123510/ss_ccf30c801a99c21a43cb7f758f4a1da6bb839fee.jpg?t=1710676156', this)">
+                  <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2123510/ss_ccf30c801a99c21a43cb7f758f4a1da6bb839fee.jpg?t=1710676156" alt="Obstacle Course">
+                  <span class="thumb-label">Trials</span>
+                </button>
+                <button type="button" class="gameplay-thumb" onclick="swapBannerImage('locomotion-banner', 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2123510/ss_a307323229a57a91861170ab8d825ded73afa917.jpg?t=1710676156', this)">
+                  <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2123510/ss_a307323229a57a91861170ab8d825ded73afa917.jpg?t=1710676156" alt="Air Control">
+                  <span class="thumb-label">Air Control</span>
+                </button>
+                <button type="button" class="gameplay-thumb" onclick="swapBannerImage('locomotion-banner', 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2123510/ss_d9c7bdb8d9355739e63a9bc2bfcfd7b70b0911b3.jpg?t=1710676156', this)">
+                  <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2123510/ss_d9c7bdb8d9355739e63a9bc2bfcfd7b70b0911b3.jpg?t=1710676156" alt="Chapter 2">
+                  <span class="thumb-label">v2.0 Map</span>
+                </button>
+              </div>
+            </div>
+
             <div class="game-tags">
               <span class="tag">Platformer</span>
               <span class="tag">Action</span>
@@ -716,7 +904,8 @@
             <div class="sidebar-block"><div class="sidebar-label">Status</div><span class="status-pill released"><span class="status-dot"></span>Released</span></div>
             <div class="sidebar-block"><div class="sidebar-label">Genre</div><div class="sidebar-value">Action Platformer</div></div>
             <div class="sidebar-block"><div class="sidebar-label">Platform</div><div class="sidebar-value">PC (Steam)</div></div>
-            <div class="sidebar-block"><div class="sidebar-label">Developer</div><div class="sidebar-value">Nanopaw Studios</div></div>
+            <div class="sidebar-block"><div class="sidebar-label">Developer</div><div class="sidebar-value">LaymGlitched</div></div>
+            <div class="sidebar-block"><div class="sidebar-label">Publisher</div><div class="sidebar-value">Nanopaw Studios</div></div>
             <div class="sidebar-block"><div class="sidebar-label">Steam App</div><div class="sidebar-value accent">#2123510</div></div>
           </div>
         </div>
@@ -726,17 +915,41 @@
     <!-- The Expedition -->
     <div class="game-entry reveal" id="expedition">
       <div class="game-entry-inner">
-        <div class="game-banner">
-          <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3621410/992815dd1579baaf2f1ca381663933bb2502aa22/ss_992815dd1579baaf2f1ca381663933bb2502aa22.jpg" alt="The Expedition">
+        <div class="game-banner" id="expedition-banner">
+          <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3621410/992815dd1579baaf2f1ca381663933bb2502aa22/ss_992815dd1579baaf2f1ca381663933bb2502aa22.jpg" alt="The Expedition Gameplay" class="banner-main-img">
           <div class="game-banner-overlay"></div>
           <div class="game-banner-content">
             <div class="game-banner-genre">Action Horror</div>
             <div class="game-banner-title">THE EXPEDITION</div>
           </div>
+          <button type="button" class="banner-play-btn" onclick="playBannerVideo('expedition-banner', '7SgQaV62zRQ')" aria-label="Play Gameplay Trailer">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <span class="banner-play-label">Play Trailer</span>
+          </button>
         </div>
         <div class="game-body">
           <div class="game-main">
             <p class="game-description">The Expedition plunges you into a hostile, terrifying environment where danger is always present and survival is never guaranteed. Blending tension-driven combat with atmospheric horror, this is a game that demands your focus — and punishes complacency. Navigate the unknown, uncover the truth of the expedition, and try to make it out alive.</p>
+            
+            <!-- Screenshot Gallery Strip -->
+            <div class="gameplay-strip">
+              <div class="gameplay-strip-label">Gameplay Screenshots & Atmosphere</div>
+              <div class="gameplay-thumbs">
+                <button type="button" class="gameplay-thumb active" onclick="swapBannerImage('expedition-banner', 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3621410/992815dd1579baaf2f1ca381663933bb2502aa22/ss_992815dd1579baaf2f1ca381663933bb2502aa22.jpg', this)">
+                  <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3621410/992815dd1579baaf2f1ca381663933bb2502aa22/ss_992815dd1579baaf2f1ca381663933bb2502aa22.jpg" alt="Exterior Ruins">
+                  <span class="thumb-label">Exterior</span>
+                </button>
+                <button type="button" class="gameplay-thumb" onclick="swapBannerImage('expedition-banner', 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3621410/38c36ada09476559ce980ebdf4bd013f63c6fbca/ss_38c36ada09476559ce980ebdf4bd013f63c6fbca.jpg', this)">
+                  <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3621410/38c36ada09476559ce980ebdf4bd013f63c6fbca/ss_38c36ada09476559ce980ebdf4bd013f63c6fbca.jpg" alt="Corridor Tension">
+                  <span class="thumb-label">Atmosphere</span>
+                </button>
+                <button type="button" class="gameplay-thumb" onclick="swapBannerImage('expedition-banner', 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3621410/f2b2b1a89a233f1219c4dfd34e1f5c25ff768df7/ss_f2b2b1a89a233f1219c4dfd34e1f5c25ff768df7.jpg', this)">
+                  <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3621410/f2b2b1a89a233f1219c4dfd34e1f5c25ff768df7/ss_f2b2b1a89a233f1219c4dfd34e1f5c25ff768df7.jpg" alt="Tools & Survival">
+                  <span class="thumb-label">Encounter</span>
+                </button>
+              </div>
+            </div>
+
             <div class="game-tags">
               <span class="tag">Horror</span>
               <span class="tag">Action</span>
@@ -745,6 +958,10 @@
               <span class="tag">PC</span>
             </div>
             <div class="game-links">
+              <button type="button" class="btn-trailer" onclick="playBannerVideo('expedition-banner', '7SgQaV62zRQ')">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                Watch Trailer
+              </button>
               <a href="https://store.steampowered.com/app/3621410/" target="_blank" rel="noopener noreferrer" class="btn-steam">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.605 0 11.979 0zM7.54 18.21l-1.473-.61c.262.543.714.999 1.314 1.25 1.297.539 2.793-.076 3.332-1.375.263-.63.264-1.319.005-1.949s-.75-1.121-1.377-1.383c-.624-.26-1.298-.232-1.913.045l1.522.63c.956.4 1.409 1.503 1.009 2.459-.397.957-1.497 1.41-2.42 1.933zm11.415-9.303c0-1.662-1.353-3.015-3.015-3.015-1.665 0-3.015 1.353-3.015 3.015 0 1.665 1.35 3.015 3.015 3.015 1.663 0 3.015-1.35 3.015-3.015zm-5.273-.005c0-1.252 1.013-2.266 2.265-2.266 1.249 0 2.266 1.014 2.266 2.266 0 1.251-1.017 2.265-2.266 2.265-1.253 0-2.265-1.014-2.265-2.265z"/></svg>
                 View on Steam
@@ -756,7 +973,8 @@
             <div class="sidebar-block"><div class="sidebar-label">Status</div><span class="status-pill released"><span class="status-dot"></span>Released</span></div>
             <div class="sidebar-block"><div class="sidebar-label">Genre</div><div class="sidebar-value">Action Horror</div></div>
             <div class="sidebar-block"><div class="sidebar-label">Platform</div><div class="sidebar-value">PC (Steam)</div></div>
-            <div class="sidebar-block"><div class="sidebar-label">Developer</div><div class="sidebar-value">Nanopaw Studios</div></div>
+            <div class="sidebar-block"><div class="sidebar-label">Developer</div><div class="sidebar-value">LaymGlitched</div></div>
+            <div class="sidebar-block"><div class="sidebar-label">Publisher</div><div class="sidebar-value">Nanopaw Studios</div></div>
             <div class="sidebar-block"><div class="sidebar-label">Steam App</div><div class="sidebar-value accent">#3621410</div></div>
           </div>
         </div>
@@ -766,17 +984,41 @@
     <!-- Project: Cube -->
     <div class="game-entry reveal" id="cube">
       <div class="game-entry-inner">
-        <div class="game-banner" style="background:#07090F;">
-          <img src="https://nanopaw-studios.github.io/images/cube/ic.png" alt="Project: Cube" style="object-fit:contain; width:100%; height:100%; padding:40px; filter:brightness(0.85);">
+        <div class="game-banner" id="cube-banner" style="background:#07090F;">
+          <img src="https://nanopaw-studios.github.io/images/cube/ic.png" alt="Project: Cube" class="banner-main-img" style="object-fit:contain; width:100%; height:100%; padding:40px; filter:brightness(0.85);">
           <div class="game-banner-overlay"></div>
           <div class="game-banner-content">
             <div class="game-banner-genre">Asymmetric Survival</div>
             <div class="game-banner-title">PROJECT: CUBE</div>
           </div>
+          <button type="button" class="banner-play-btn" onclick="playBannerVideo('cube-banner', 'EodaRHRCkgQ')" aria-label="Play In-Engine Gameplay Footage">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <span class="banner-play-label">Watch Gameplay</span>
+          </button>
         </div>
         <div class="game-body">
           <div class="game-main">
             <p class="game-description">Project: Cube is an asymmetrical 1vAll survival game that flips the script on classic multiplayer. One player takes on the role of the predator, equipped with unique abilities designed to hunt. The rest must cooperate, strategise, and survive long enough to find a way out. Every match is different — and every moment is tense.</p>
+            
+            <!-- Screenshot/Devlog Strip -->
+            <div class="gameplay-strip">
+              <div class="gameplay-strip-label">Development Media & Early Testing</div>
+              <div class="gameplay-thumbs">
+                <button type="button" class="gameplay-thumb active" onclick="playBannerVideo('cube-banner', 'EodaRHRCkgQ')">
+                  <img src="https://img.youtube.com/vi/EodaRHRCkgQ/hqdefault.jpg" alt="Early Testing Gameplay">
+                  <span class="thumb-label">▶ Test Footage</span>
+                </button>
+                <button type="button" class="gameplay-thumb" onclick="playBannerVideo('cube-banner', 'iQtNQgr1O8g')">
+                  <img src="https://img.youtube.com/vi/iQtNQgr1O8g/hqdefault.jpg" alt="Devlog 1 Architecture">
+                  <span class="thumb-label">▶ Devlog #1</span>
+                </button>
+                <button type="button" class="gameplay-thumb" onclick="playBannerVideo('cube-banner', 'v3IhwhdSLjs')">
+                  <img src="https://img.youtube.com/vi/v3IhwhdSLjs/hqdefault.jpg" alt="Project Teaser">
+                  <span class="thumb-label">▶ Teaser</span>
+                </button>
+              </div>
+            </div>
+
             <div class="game-tags">
               <span class="tag">Multiplayer</span>
               <span class="tag">Asymmetric</span>
@@ -785,15 +1027,20 @@
               <span class="tag">Co-op</span>
             </div>
             <div class="game-links">
+              <button type="button" class="btn-trailer" onclick="playBannerVideo('cube-banner', 'EodaRHRCkgQ')">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                Watch Gameplay
+              </button>
+              <a href="https://www.youtube.com/@laym.glitched" target="_blank" rel="noopener noreferrer" class="btn-outline">Watch Devlogs &rarr;</a>
               <a href="https://discord.gg/tTZYAQTvRF" target="_blank" rel="noopener noreferrer" class="btn-outline">Follow on Discord &rarr;</a>
-              <a href="https://www.youtube.com/@NanoDogsStudios" target="_blank" rel="noopener noreferrer" class="btn-outline">Dev Updates &rarr;</a>
             </div>
           </div>
           <div class="game-sidebar">
             <div class="sidebar-block"><div class="sidebar-label">Status</div><span class="status-pill coming-soon"><span class="status-dot"></span>In Development</span></div>
             <div class="sidebar-block"><div class="sidebar-label">Genre</div><div class="sidebar-value">Asymmetric Survival</div></div>
             <div class="sidebar-block"><div class="sidebar-label">Players</div><div class="sidebar-value">1vAll Multiplayer</div></div>
-            <div class="sidebar-block"><div class="sidebar-label">Developer</div><div class="sidebar-value">Nanopaw Studios</div></div>
+            <div class="sidebar-block"><div class="sidebar-label">Developer</div><div class="sidebar-value">LaymGlitched</div></div>
+            <div class="sidebar-block"><div class="sidebar-label">Publisher</div><div class="sidebar-value">Nanopaw Studios</div></div>
             <div class="sidebar-block"><div class="sidebar-label">Release</div><div class="sidebar-value accent">TBA</div></div>
           </div>
         </div>
@@ -811,6 +1058,7 @@
     <ul class="footer-nav">
       <li><a href="index.html">Home</a></li>
       <li><a href="projects.html">Games</a></li>
+      <li><a href="index.html#devlogs">Devlogs</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="community.html">Community</a></li>
     </ul>
@@ -822,6 +1070,54 @@
   </footer>
 
   <script>
+    // ── VIDEO & GALLERY HANDLERS ──
+    function playBannerVideo(bannerId, videoId) {
+      const banner = document.getElementById(bannerId);
+      if (!banner) return;
+      let container = banner.querySelector('.banner-video-container');
+      if (!container) {
+        container = document.createElement('div');
+        container.className = 'banner-video-container';
+        container.innerHTML = `
+          <button type="button" class="banner-close-video" onclick="closeBannerVideo('${bannerId}')" aria-label="Close Video">&times;</button>
+          <iframe src="https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0" title="Gameplay Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        `;
+        banner.appendChild(container);
+      } else {
+        const iframe = container.querySelector('iframe');
+        if (iframe) iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`;
+      }
+      container.classList.add('active');
+    }
+
+    function closeBannerVideo(bannerId) {
+      const banner = document.getElementById(bannerId);
+      if (!banner) return;
+      const container = banner.querySelector('.banner-video-container');
+      if (container) {
+        const iframe = container.querySelector('iframe');
+        if (iframe) iframe.src = '';
+        container.classList.remove('active');
+      }
+    }
+
+    function swapBannerImage(bannerId, newSrc, thumbEl) {
+      const banner = document.getElementById(bannerId);
+      if (!banner) return;
+      closeBannerVideo(bannerId);
+      const mainImg = banner.querySelector('img.banner-main-img');
+      if (mainImg) {
+        mainImg.src = newSrc;
+      }
+      if (thumbEl) {
+        const parent = thumbEl.closest('.gameplay-thumbs');
+        if (parent) {
+          parent.querySelectorAll('.gameplay-thumb').forEach(t => t.classList.remove('active'));
+          thumbEl.classList.add('active');
+        }
+      }
+    }
+
     // ── CURSOR ──
     const cursor     = document.getElementById('cursor');
     const cursorRing = document.getElementById('cursor-ring');
