@@ -257,7 +257,7 @@
     /* ── PLATFORM GRID ── */
     .platform-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 18px;
       margin-top: 52px;
     }
@@ -367,6 +367,14 @@
     }
     .platform-card.patreon:hover { border-color: rgba(255,66,77,0.35); box-shadow: 0 24px 60px rgba(255,66,77,0.07); }
     .platform-card.patreon .platform-action { color: #FF424D; }
+
+    /* Bluesky */
+    .platform-card.bluesky {
+      background: linear-gradient(160deg, rgba(17,133,254,0.05) 0%, var(--surface) 50%);
+      border-color: rgba(17,133,254,0.12);
+    }
+    .platform-card.bluesky:hover { border-color: rgba(17,133,254,0.35); box-shadow: 0 24px 60px rgba(17,133,254,0.07); }
+    .platform-card.bluesky .platform-action { color: #1185FE; }
 
     /* Email */
     .platform-card.email {
@@ -653,10 +661,12 @@
     .reveal.in-view { opacity:1; transform:translateY(0); }
 
     /* ── RESPONSIVE ── */
+    @media (max-width: 1100px) {
+      .platform-grid { grid-template-columns: 1fr 1fr; }
+    }
     @media (max-width: 1000px) {
       .discord-hero { grid-template-columns:1fr; }
       .discord-side-img { display:none; }
-      .platform-grid { grid-template-columns:1fr 1fr; }
       .contact-grid { grid-template-columns:1fr; gap:48px; }
       .email-card { position:static; }
     }
@@ -708,6 +718,7 @@
       "Multiplayer Survival Games"
     ],
     "sameAs": [
+      "https://bsky.app/profile/nanopawstudios.bsky.social",
       "https://www.youtube.com/@NanopawStudios",
       "https://www.youtube.com/@laym.glitched",
       "https://discord.gg/tTZYAQTvRF",
@@ -800,6 +811,24 @@
           <div class="platform-card-footer">
             <span class="platform-action">Subscribe &rarr;</span>
             <span class="platform-handle">@NanopawStudios</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Bluesky -->
+      <a href="https://bsky.app/profile/nanopawstudios.bsky.social" target="_blank" rel="noopener noreferrer" class="platform-card bluesky reveal">
+        <div class="platform-card-header">
+          <div class="platform-icon" style="background:rgba(17,133,254,0.12);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="#1185FE"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 0 1-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8Z"/></svg>
+          </div>
+          <span class="platform-ext-arrow" aria-hidden="true">↗</span>
+        </div>
+        <div class="platform-card-body">
+          <div class="platform-name">Bluesky</div>
+          <div class="platform-desc">Short-form updates, development musings, screenshot sneak peeks, and casual interactions. Follow our official account on the open network.</div>
+          <div class="platform-card-footer">
+            <span class="platform-action">Follow &rarr;</span>
+            <span class="platform-handle">@nanopawstudios.bsky.social</span>
           </div>
         </div>
       </a>
@@ -911,6 +940,13 @@
               </div>
               <span class="social-pill-name">Discord</span>
               <span class="social-pill-action">Join &rarr;</span>
+            </a>
+            <a href="https://bsky.app/profile/nanopawstudios.bsky.social" target="_blank" rel="noopener noreferrer" class="social-pill">
+              <div class="social-pill-icon" style="background:rgba(17,133,254,0.12);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#1185FE"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 0 1-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8Z"/></svg>
+              </div>
+              <span class="social-pill-name">Bluesky</span>
+              <span class="social-pill-action">Follow &rarr;</span>
             </a>
             <a href="https://www.youtube.com/@NanopawStudios" target="_blank" rel="noopener noreferrer" class="social-pill">
               <div class="social-pill-icon" style="background:rgba(255,0,0,0.1);">
